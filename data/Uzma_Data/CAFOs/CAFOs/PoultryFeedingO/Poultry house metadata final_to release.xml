@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Alexander Soroka</origin>
+        <origin>Zachary Duren</origin>
+        <pubdate>20200110</pubdate>
+        <title>Poultry Feeding Operations on the Delaware, Maryland, and Virginia Peninsula from 2016 to 2017</title>
+        <geoform>vector digital data</geoform>
+        <onlink>https://doi.org/10.5066/P9MO25Z7</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Data release contains two shapefiles related to poultry houses on the Delmarva Peninsula (Delaware, Eastern Shore Maryland and, Eastern Shore Virginia).  One dataset is a polygon shapefile representing 6013 poultry houses identified using 2016 and 2017 aerial imagery from the U.S. Department of Agricultures National Aerial Imagery Program (NAIP).  The second dataset is a point shapefile of inactive houses which displayed similar characteristics to the active houses except were overgrown or in a state of disrepair (in some cases only the building's footprint remains).</abstract>
+      <purpose>Data were created to support avian epidemiology research by the USGS Chesapeake Bay Studies program to investigate disease transmission risk of migratory birds to farms.  Poultry houses were mapped to learn about spatial house density across the peninsula, and poultry house proximity to ponds which migratory birds may use.</purpose>
+      <supplinf>Citations which were included in the "processing steps" and "logical consistency report" sections can be found here. 
+Delmarva Poultry Industry, 2019,  See how the chicken industry is working for Delmarva, accessed on December 31, 2019, at https://www.dpichicken.org/facts/docs/FACTS18.pdf
+
+Soroka, A.M., 2018, Poultry production houses in the Upper Choptank watershed identified using aerial imagery from 1968 to 2018: U.S. Geological Survey data release, https://doi.org/10.5066/F7222T2H.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <mdattim>
+          <sngdate>
+            <caldate>2016</caldate>
+          </sngdate>
+          <sngdate>
+            <caldate>2017</caldate>
+          </sngdate>
+        </mdattim>
+      </timeinfo>
+      <current>observed</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-76.1843</westbc>
+        <eastbc>-75.1156</eastbc>
+        <northbc>39.5494</northbc>
+        <southbc>37.3580</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>inlandWaters</themekey>
+        <themekey>farming</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Poultry Houses</themekey>
+        <themekey>Poultry</themekey>
+        <themekey>Chicken</themekey>
+        <themekey>CAFO</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:5e0a3fcde4b0b207aa0d794e</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Delaware</placekey>
+        <placekey>Maryland</placekey>
+        <placekey>Virginia</placekey>
+        <placekey>Eastern shore Maryland</placekey>
+        <placekey>Eastern shore Virginia</placekey>
+        <placekey>Delmarva</placekey>
+        <placekey>Chesapeake Bay</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the data set's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Alexander M Soroka</cntper>
+          <cntorg>U.S. Geological Survey, NORTHEAST REGION</cntorg>
+        </cntperp>
+        <cntpos>Physical Scientist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>5522 Research Park Drive</address>
+          <city>Catonsville</city>
+          <state>MD</state>
+          <postal>21228</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>443-498-5529</cntvoice>
+        <cntemail>asoroka@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>Chris Hammond of the USGS and Andrew Garcia of Fairfax County public schools for their help facilitating this work.  The author also thanks Brandon Fleming of the USGS for input in processing these data.</datacred>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Attribute accuracy was determined following the processing steps outlined under "Process Steps".   
+
+The shapefile containing polygons has an area attribute for each polygon which was calculated using the "calculate geometry" tool in ESRI Arcmap software.  The accuracy of these area calculations relied on digitization efforts of the analyst at the observed resolution.</attraccr>
+    </attracc>
+    <logic>Data were originally created at a county level.  In merging datasets together, borders of counties were examined to make sure that duplicate polygons were not created.
+
+The total count of houses was reasonably similar to a number of "active" houses reported for 2018 by the Delmarva Poultry Industry group.  This shapefile contains 6013 houses identified and outlined in 2016 and 2017.  The Delmarva Poultry Industry Group suggested 5166 houses were active in 2018 (Delmarva Poultry Industry, 2019).  This discrepancy could be caused by several factors; houses might be built but not active in any given year, retired houses could have been identified as those in use, others may have been misidentified.  
+
+Following final data processing step for polygons, the data were ranked based on area to find possible illogical values.  After ranking polygons based on area some polygon fragments were removed.  Authors determined that fragmentation came about in a merge step.
+
+Delmarva Poultry Industry, 2019, See how the chicken industry is working for Delmarva, accessed on December 31, 2019, at https://www.dpichicken.org/facts/docs/FACTS18.pdf</logic>
+    <complete>Data are considered complete.</complete>
+    <lineage>
+      <procstep>
+        <procdesc>Poultry houses were initially identified with a Geographic Information System (GIS) and imagery from the USDA's National Agriculture Imagery Program (NAIP).  NAIP imagery from 2017 was used for Delaware and Maryland counties and imagery from 2016 was used for the Virginia counties.  Poultry house structures were captured using on-screen digitizing techniques by manually drawing rectangular polygons within a GIS. 
+
+Poultry house digital identification methods followed Soroka (2018). 
+
+The following qualifying factors were used to determine if found structure was likely an active poultry house operation:
+
+1. Solid Roof:  Roof is devoid of holes and is structurally sound.
+2. Feed Bin:  Short silos for grain feed are in place 
+3. Landscape:  Plants and trees do not obstruct doors and are not growing on facility. 
+4. Structures do not have obvious manure lagoons (indicative of larger livestock operation (such as dairy farm))
+
+Soroka, A.M., 2018, Poultry production houses in the Upper Choptank watershed identified using aerial imagery from 1968 to 2018: U.S. Geological Survey data release, https://doi.org/10.5066/F7222T2H.</procdesc>
+        <procdate>20190701</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Following the draft county file creation, in process step 1, individual counties were combined to form a map of the entire Delmarva peninsula. The polygons were then examined to determine if the houses were most likely a house and if they were operational.  During this step, the analyst realized that many of the originally identified houses were probably in use at some time but, not currently.  Evidence of inactive houses were some or all of the following conditions: houses were overgrown with trees, houses had portions of the roof missing, houses had no access road or, houses were in a state of disrepair.  This led to the creation of the "Delmarva_retired_houses.shp" layer.  The "Delmarva_retired_houses.shp" layer was created as points instead of polygons due to time constraints.</procdesc>
+        <procdate>20190915</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Following the merge of county files, aerial imagery was examined to determine if any houses were missed in initial counting.  The authors found some houses were missed because they were singular and not constructed in groups.  Additional houses were added to the dataset within this step.</procdesc>
+        <procdate>20191101</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Following step 3 the "intersect" tool within the ESRI Arcmap software was used to find duplicated polygons.  This tool performs a spatial join to determine the extent of polygon overlap.  Duplicate polygons were removed from the dataset.</procdesc>
+        <procdate>20191111</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Following step 4, the entire dataset was saved and area was calculated for each polygon using the "calculate geometry" tool in ESRI Arcmap software.</procdesc>
+        <procdate>20191111</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spref>
+    <horizsys>
+      <planar>
+        <gridsys>
+          <gridsysn>Universal Transverse Mercator</gridsysn>
+          <utm>
+            <utmzone>18</utmzone>
+            <transmer>
+              <sfctrmer>0.9996</sfctrmer>
+              <longcm>-75.0</longcm>
+              <latprjo>0.0</latprjo>
+              <feast>500000.0</feast>
+              <fnorth>0.0</fnorth>
+            </transmer>
+          </utm>
+        </gridsys>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.6096</absres>
+            <ordres>0.6096</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>WGS_1984</horizdn>
+        <ellips>WGS_84</ellips>
+        <semiaxis>6378137.0</semiaxis>
+        <denflat>298.257223563</denflat>
+      </geodetic>
+    </horizsys>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Delmarva_PL_House_Final.shp</enttypl>
+        <enttypd>Shapefile of 6013 poultry houses identified in 2016 and 2017 NAIP imagery.</enttypd>
+        <enttypds>U.S. Geological Survey</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>FID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shape</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>AreaMeters</attrlabl>
+        <attrdef>Area of the polygon in square meters as calculated by the "Calculate geometry" function in GIS.</attrdef>
+        <attrdefs>U.S. Geological Survey</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>526</rdommin>
+            <rdommax>8107</rdommax>
+            <attrunit>meters</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Delmarva_retired_houses.shp</enttypl>
+        <enttypd>Shapefile of points of poultry houses which are no longer active or have been removed</enttypd>
+        <enttypds>U.S. Geological Survey</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>FID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shape</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Id</attrlabl>
+        <attrdef>Unique ID for points equal to FID+1</attrdef>
+        <attrdefs>U.S. Geological survey</attrdefs>
+        <attrdomv>
+          <udom>Unique ID for points equal to FID+1</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>GS ScienceBase</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty. Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9MO25Z7</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20200821</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>alexander soroka</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>5522 Research Park Drive</address>
+          <city>Catonsville</city>
+          <state>Maryland</state>
+          <postal>21228</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>443 498 5529</cntvoice>
+        <cntemail>asoroka@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

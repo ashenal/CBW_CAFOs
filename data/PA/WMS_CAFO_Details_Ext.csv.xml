@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20251027</CreaDate><CreaTime>15445800</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\Toolboxes\Data Management Tools.tbx\Copy" Date="20251027" Time="154458">Copy D:\CBW_CAFOs\data\WMS_CAFO_Details_Ext.csv D:\CBW_CAFOs\data\PA\WMS_CAFO_Details_Ext.csv # #</Process></lineage></DataProperties></Esri></metadata>
