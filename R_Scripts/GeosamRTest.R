@@ -51,9 +51,10 @@ cafos <- map_dfr(
       
       res <- sam_detect(
         bbox = grid[i, ],
-        text = "grouped silver warehouses",
+        text = "long narrow farm buildings with light colored metal roofs"
         source = "mapbox",
         zoom = 15,
+        
         chunked = FALSE
       )
       
@@ -119,7 +120,17 @@ cafos <- do.call(rbind, results_list)
 library(geosam)
 library(dplyr)
 
-dir.create("./results", showWarnings = FALSE)
+county <- st_read("./data/Uzma_Data/Counties/Caroline_County_Detailed/Caroline_County_Detailed.shp") %>% st_transform(., 3857)
+
+grid <- st_make_grid(
+  county,
+  cellsize = 2000,   # meters
+  square = TRUE
+) |>
+  st_sf() |>
+  st_intersection(county)
+
+dir.create("./results1.14", showWarnings = FALSE)
 
 for (i in seq_len(nrow(grid))) {   # loop over ALL grid cells
   message("Processing chunk: ", i, " / ", nrow(grid))
@@ -127,10 +138,10 @@ for (i in seq_len(nrow(grid))) {   # loop over ALL grid cells
   res <- tryCatch({
     sam_detect(
       bbox   = grid[i, ],
-      text   = "grouped silver warehouses",
+      text   = "long narrow farm buildings with light colored metal roofs",
       source  = "mapbox",
       zoom    = 15,
-      chunked = FALSE
+      threshold = 0.4
     )
   }, error = function(e) { 
     message(" -> error on chunk ", i, " : ", e$message)
@@ -144,7 +155,7 @@ for (i in seq_len(nrow(grid))) {   # loop over ALL grid cells
     res_sf <- tryCatch(sam_as_sf(res), error = function(e) NULL)
     if (!is.null(res_sf) && nrow(res_sf) > 0) {
       res_sf <- res_sf %>% mutate(chunk_id = i)
-      saveRDS(res_sf, file = sprintf("./results/geosam_chunk_%03d.rds", i))
+      saveRDS(res_sf, file = sprintf("./results1.14/geosam_chunk_%03d.rds", i))
       message(" -> saved chunk ", i)
     } else {
       message(" -> chunk ", i, " has no sf polygons")
@@ -169,3 +180,71 @@ ggplot() +
   geom_sf(data = county, fill = "white", color = "black") +
   geom_sf(data = cafos, aes(fill = factor(chunk_id)), alpha = 0.5, color = "red") +
   theme_minimal()
+
+
+
+
+# TEST 1.14 ---------------------------------------------------------------
+
+
+for (i in seq_len(nrow(grid))) {
+  message("Processing chunk: ", i, " / ", nrow(grid))
+  
+  res <- tryCatch({
+    sam_detect(
+      bbox      = grid[i, ],
+      text      = "long narrow farm buildings with light colored metal roofs",
+      source    = "mapbox",
+      zoom      = 15,
+      threshold = 0.3,
+      chunked   = TRUE
+    )
+  }, error = function(e) {
+    message(" -> error on chunk ", i, " : ", e$message)
+    return(NULL)
+  })
+  
+  if (!is.null(res) && length(res) > 0) {
+    res_sf <- tryCatch(sam_as_sf(res), error = function(e) NULL)
+    
+    if (!is.null(res_sf) && nrow(res_sf) > 0) {
+      res_sf <- mutate(res_sf, chunk_id = i)
+      
+      saveRDS(
+        res_sf,
+        file = sprintf("./results1-14/geosam_chunk_%03d.rds", i)
+      )
+      
+      message(" -> saved chunk ", i)
+    } else {
+      message(" -> chunk ", i, " has no sf polygons")
+    }
+  } else {
+    message(" -> chunk ", i, " returned NULL or empty")
+  }
+}
+
+files <- list.files(
+  "./results1-14",
+  pattern = "geosam_chunk_.*\\.rds$",
+  full.names = TRUE
+)
+
+cafos_raw <- map_dfr(files, readRDS)
+
+library(mapview)
+library(sf)
+
+mapview(cafos_raw, col.regions = "red")
+
+files <- list.files(
+  "./results1-14",
+  pattern = "geosam_chunk_.*\\.rds$",
+  full.names = TRUE
+)
+
+cafos_raw <- do.call(rbind, lapply(files, readRDS))
+st_write(
+  cafos_raw,
+  "./results1-14/Caroline_County_Candidates.gpkg"
+)
