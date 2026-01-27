@@ -212,7 +212,7 @@ for (i in seq_len(nrow(grid))) {
       
       saveRDS(
         res_sf,
-        file = sprintf("./results1-14/geosam_chunk_%03d.rds", i)
+        file = sprintf("./Results_GeoSAM/1.3_1.26.26/geosam_chunk_%03d.rds", i)
       )
       
       message(" -> saved chunk ", i)
@@ -225,7 +225,7 @@ for (i in seq_len(nrow(grid))) {
 }
 
 files <- list.files(
-  "./results1-14",
+  "././Results_GeoSAM/1.3_1.26.26",
   pattern = "geosam_chunk_.*\\.rds$",
   full.names = TRUE
 )
@@ -238,7 +238,7 @@ library(sf)
 mapview(cafos_raw, col.regions = "red")
 
 files <- list.files(
-  "./results1-14",
+  "././Results_GeoSAM/1.3_1.26.26",
   pattern = "geosam_chunk_.*\\.rds$",
   full.names = TRUE
 )
@@ -246,5 +246,5 @@ files <- list.files(
 cafos_raw <- do.call(rbind, lapply(files, readRDS))
 st_write(
   cafos_raw,
-  "./results1-14/Caroline_County_Candidates.gpkg"
+  "././Results_GeoSAM/1.3_1.26.26/Caroline_County_Candidates.gpkg"
 )
